@@ -16,11 +16,22 @@ if(nameInput.value === '' || emailInput.value === '') {
 } else {
  
  //storing entered detail to local storage
- localStorage.setItem('name',nameInput.value);
- localStorage.setItem('email',emailInput.value);
+//  localStorage.setItem('name',nameInput.value);
+//  localStorage.setItem('email',emailInput.value); 
  
+
+//storing user detail as object
+ myobj={
+    name: nameInput.value,
+    email: emailInput.value
+};
+
+myobj_serialized=JSON.stringify(myobj);
+localStorage.setItem('myobj',myobj_serialized);
+
 }
- nameInput.value = '';
+ 
+ nameInput.value='';
  emailInput.value = '';
 
 })
