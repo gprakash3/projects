@@ -26,6 +26,7 @@ btn.addEventListener('click', (e)=>
 
     itemlist.appendChild(li);
 
+    
 
     //storing user detail as object
  myobj={
@@ -33,6 +34,12 @@ btn.addEventListener('click', (e)=>
     email: document.getElementById('aemail').value,
     Phone_number: document.getElementById('num').value
 };
+
+//Not working
+//removing data from local storage on clicking delete button
+// delbtn.onclick = () => {
+//     localStorage.removeItem(e.email);
+// }
 
 //adding data to local storage as object with key Email.
 myobj_serialized=JSON.stringify(myobj);
@@ -44,11 +51,7 @@ localStorage.setItem(document.getElementById('aemail').value,myobj_serialized);
 itemlist.addEventListener('click', (ev)=> {
     // ev.target.classList.contains('del');
     if(ev.target.classList.contains('del')){
-    
-
-
-
-       // localStorage.removeItem(key);
+       //localStorage.removeItem(document.getElementById('aemail').value);
         //removing that particular line
         var li = ev.target.parentElement;
       itemlist.removeChild(li);
