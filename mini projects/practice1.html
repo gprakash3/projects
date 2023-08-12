@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice 1</title>
+    <style>
+        .container{
+            background-color: aquamarine;
+            border: 2px solid red;
+            display: inline-block;
+            width: auto;
+        }
+        .datas{
+            background-color: blanchedalmond;
+            border: 3px solid rgb(8, 245, 8);
+        }
+        .fill{
+            background-color: blueviolet;
+        }
+        .btns{
+            background-color: yellow;
+            padding: 9px 0px;
+             margin: -1px 110px
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="datas">
+            <div class="fill">
+            name: <input type="text"  id="name" placeholder="enter your name">
+            color: <input type="text"  id="scolor" placeholder="choose your color">
+        </div>
+        <div class="btns">
+            <input type="submit" id="submitbtn">
+            <input type="reset" id="rest">
+        </div>
+        </form>
+    </div>
+    <div id="contain">
+
+
+    </div>
+    <div id="contain2">
+
+    </div>
+</body>
+<script>
+
+
+
+bt=document.getElementById('rest')
+    //console.log(bt);
+    bt.addEventListener('click',  (ev) => {
+        ev.preventDefault();
+
+        //////////////////////////////////////////
+        const createdElement = document.createElement("h1");
+
+//Add innerHTML means the content
+createdElement.innerHTML = "Javascript is Intersting to Learn!";
+
+//Append a new element inside the body
+document.body.append(createdElement);
+//////////////////////////////////////////////////////////
+        console.log('passed over');
+      
+   
+    const lit=document.getElementById('contain2');
+
+    var pa=document.createElement("h1");
+    pa.className='newpara';
+    pa.innerHTML="new text added";
+    pa.appendChild(document.createTextNode('reset button is pressed here'));
+    lit.appendChild(pa);
+    });
+
+
+    b=document.getElementById('submitbtn');
+
+    
+    b.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('pressed');
+        //pressing functionality working. need to work on dom and css property
+
+        const itemlist=document.getElementById('contain');    
+    var li=document.createElement('li');
+    li.className='newline';
+    //li.appendChild(document.createTextNode(document.getElementById('aname').value));
+    li.appendChild(document.createTextNode(' - '));
+    //li.appendChild(document.createTextNode(document.getElementById('aemail').value));
+    li.appendChild(document.createTextNode(' - '));
+    //li.appendChild(document.createTextNode(document.getElementById('num').value));
+
+    //add delete button in new li
+    var delbtn=document.createElement('button');
+    delbtn.className='del';
+    //adding content delete in delbtn
+    delbtn.appendChild(document.createTextNode('DELETE'));
+    li.appendChild(delbtn);
+
+    itemlist.appendChild(li);
+
+    delbtn.addEventListener('click', () => {
+        li.removeChild(newele);
+
+    })
+
+    });
+
+
+
+
+
+
+
+
+
+   
+    
+   
+    
+
+</script>
+</html>
