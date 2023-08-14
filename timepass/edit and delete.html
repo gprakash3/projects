@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+
+<body>
+    <div class="heading">
+        <h3>This is demo project</h3>
+        <h1>Add items here</h1>
+    </div>
+    <div id="msg"> </div>
+    <br>
+    <hr>
+    <div id="inputbox">
+        <input type="text" id=box1>
+        <input type="submit" id="sumt">
+    </div>
+    
+
+</body>
+<script>
+    const btn=document.getElementById('sumt');
+    const area=document.getElementById('display');
+    
+    //adding event on submit btn click
+    btn.addEventListener('click', () => {
+        document.getElementById('msg').innerHTML='message displayed here';
+        function a(){document.getElementById('msg').innerHTML='';}
+        setTimeout(a,2000);  //take uniform time irrespective of no. of times submit button clicked
+        // setInterval also working here. but message disappear very fast after few clicking of submit
+        //button (take time less than specified)
+        //adding li element
+        var data=document.createElement('li');
+        //adding text content in li tag
+        var text=document.createElement('span');
+        var val=document.createTextNode(document.getElementById('box1').value)
+        text.appendChild(val);
+        data.appendChild(text);
+        document.getElementById('box1').value=''
+        
+        //adding delete btn to li element
+        var del=document.createElement('button');
+        del.id='delbtn';
+        del.innerHTML='Delete';
+        data.appendChild(del);
+        
+        //adding edit btn to li element
+        var edit=document.createElement('button');
+        edit.id='editbtn'
+        edit.innerHTML='Edit';
+        data.appendChild(edit);
+        //adding li element to message area.
+        area.appendChild(data);
+        
+      //Adding delete functionality to delete btn
+      del.addEventListener('click',  deletefunc);
+      //defining function deletefunc
+      function deletefunc(){
+          console.log('del btn clicked');
+          //to remove only data and edit btn
+        //   data.removeChild(del);
+        //   data.removeChild(edit);
+          
+          //to remove whole li tag
+          data.remove();
+          
+          //another way to remove li tag
+         //area.removeChild(data);
+
+         //can also used to remove li tag
+        // e.target.parentNode.remove();
+        
+        //can also used to remove li tag
+         // data.parentNode.firstElementChild.remove();
+      }
+      
+      //adding editbtn functionality
+      edit.addEventListener('click', editfunc);
+      //defining editfunc functionality
+      function editfunc(){
+          //console.log('edit btn pressed');
+          document.getElementById('box1').value=text.textContent;
+          console.log(text.textContent);
+          deletefunc();
+      }
+      
+      
+        
+    })
+</script>
+
+</html>
