@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <style>
+        .forms{
+            background-color: aliceblue;
+            border: 1px solid black;
+            display: inline-block;
+            width: auto;
+
+        }
+        input{
+            background-color: yellow;
+        }
+        html{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="forms">
+    <h2 style="color: yellow; background-color:blue;">please eneter the task to remember</h2>
+    Task: <input type="text"  id="comment"><br>
+    <label for="date">choose date and time:</label>
+    <input type="datetime-local" id="date">
+    <br>
+    Task status:
+    <input type="radio" name="status" value="Done">Done
+    <input type="radio" name="status" value="Not Done">Not Done
+    <br>
+    <input type="button" id="smtbtn" value="submit">
+    
+    </div>
+    <div id="display">
+
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+<script src="todo.js"></script>
+</html>
